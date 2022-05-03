@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count</title>
+</head>
+<body>
+    <h1>There are {{ count | safe }} words in your text!</h1>
+
+    <h2><a href={% url "homepage" %}>Start Again</a></h2>
+
+    <h1>Your Text:</h1>
+    {{ fulltext | safe }}
+    <h1>Word Count:</h1>
+    <h3>
+    {% for key, value in sortedwords %}
+        {{ key | safe }} : {{ value | safe }} <br>
+    {% endfor %}
+    </h3>
+</body>
+</html>
